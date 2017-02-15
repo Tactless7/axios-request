@@ -18,10 +18,10 @@
       <td>{{ $sweet->name }}</td>
       <td>{{ $sweet->stock }}</td>
       <td style="display: flex; flex-direction: row;">
-        <form class="ui form" action="/restock" method="post"> {{ csrf_field() }}
+        <form class="ui form" action="/api/restock/{{$sweet->id}}" method="post"> {{ csrf_field() }}
           <button type="submit" class="ui button">+</button>
         </form>
-        <form class="ui form" action="/sell" method="post"> {{ csrf_field() }}
+        <form class="ui form" action="/api/sell/{{$sweet->id}}" method="post"> {{ csrf_field() }}
           <button type="submit" class="ui button">-</button>
         </form>
         <form class="ui form" action="/delete/{{$sweet->id}}" method="post"> {{ csrf_field() }}

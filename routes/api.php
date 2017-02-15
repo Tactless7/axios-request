@@ -17,5 +17,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/sell', 'SweetController@asyncSell');
-Route::post('/restock', 'SweetController@asyncRestock');
+Route::post('/sell/{id}', 'SweetController@asyncSell');
+Route::post('/restock/{id}', 'SweetController@asyncRestock');

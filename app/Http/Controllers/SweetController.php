@@ -25,4 +25,18 @@ class SweetController extends Controller
         $sweet->delete();
         return redirect()->route('home');
     }
+
+    public function asyncSell($id){
+        $sweet = \App\Sweet::find($id);
+        $sweet->stock --;
+        $sweet->save();
+        return response()->json(['stock' => $sweet->stock]);
+    }
+
+    public function asyncRestock($id){
+        $sweet = \App\Sweet::find($id);
+        $sweet->stock ++;
+        $sweet->save();
+        return response()->json(['stock' => $sweet->stock]);
+    }
 }
