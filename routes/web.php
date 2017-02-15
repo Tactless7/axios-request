@@ -10,8 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'SweetController@getList');
+Route::get('/', 'SweetController@getList')->name('home');
 
 Route::get('/add', function () {
     return view('sweets.add');
 });
+
+Route::post('/add', 'SweetController@postAdd');
