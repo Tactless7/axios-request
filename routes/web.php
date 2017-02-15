@@ -17,3 +17,5 @@ Route::get('/add', function () {
 });
 
 Route::post('/add', 'SweetController@postAdd');
+
+Route::post('/delete/{id}', 'SweetController@postDelete');

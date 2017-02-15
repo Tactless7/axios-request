@@ -19,4 +19,10 @@ class SweetController extends Controller
         $sweet->save();
         return redirect()->route('home');
     }
+
+    public function postDelete($id){
+        $sweet = \App\Sweet::find($id);
+        $sweet->delete();
+        return redirect()->route('home');
+    }
 }
