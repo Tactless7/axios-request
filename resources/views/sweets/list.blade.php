@@ -7,9 +7,10 @@
 
   <table class="ui table">
     <tr>
+      <th>Id</th>
       <th>Name</th>
       <th>Stock</th>
-      <th>Modify</th>
+      <th>Modifiers</th>
     </tr>
     @foreach ($sweets as $sweet)
     <tr>
